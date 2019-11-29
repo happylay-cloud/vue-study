@@ -32,7 +32,8 @@
         },
         mounted() {
             axios
-                .get('data.json')
+            // 用idea测试
+            .get('data.json')
                 .then(response => (this.info = response.data));
         }
     });

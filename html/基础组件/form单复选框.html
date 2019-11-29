@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表单 form</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="vue">
+    单复选框：<input type="checkbox" id="checkbox" v-model="checked">&nbsp;&nbsp;<label for="checkbox">{{ checked }}</label>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#vue',
+        data: {
+            checked: false
+        }
+    });
+</script>
+
+</body>
+</html>

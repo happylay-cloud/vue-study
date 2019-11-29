@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表单 form</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="vue">
+    单选按钮：
+    <input type="radio" id="one" value="One" v-model="picked">
+    <label for="one">One</label>
+    <input type="radio" id="two" value="Two" v-model="picked">
+    <label for="two">Two</label>
+    <span>选中的值: {{ picked }}</span>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#vue',
+        data: {
+            picked: ''
+        }
+    });
+</script>
+
+</body>
+</html>

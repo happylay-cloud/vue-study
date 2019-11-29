@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>表单 form</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="vue">
+    单行文本：<input type="text" v-model="message" />&nbsp;&nbsp;单行文本是：{{message}}
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#vue',
+        data: {
+            message: "Hello Vue"
+        }
+    });
+</script>
+
+</body>
+</html>

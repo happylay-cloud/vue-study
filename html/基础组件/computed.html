@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>布局 计算属性</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="vue">
+    <p>调用当前时间的方法：{{currentTime1()}}</p>
+    <p>当前时间的计算属性：{{currentTime2}}</p>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el: '#vue',
+        data: {
+            message: 'Hello Vue'
+        },
+        // 定义方法，调用方法使用 currentTime1()，需要带括号,methods 和 computed 里不能重名
+        methods: {
+            currentTime1: function () {
+                return Date.now();
+            }
+        },
+        // 定义计算属性，调用属性使用 currentTime2，不需要带括号；this.message 能够让 currentTime2 观察到数据变化而变化
+        computed: {
+            currentTime2: function () {
+                this.message;
+                return Date.now();
+            }
+        }
+    });
+</script>
+</body>
+</html>
