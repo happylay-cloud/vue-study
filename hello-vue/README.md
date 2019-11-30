@@ -37,6 +37,12 @@ npm run dev
 # 启动报错处理-(卸载当前版本)卸了重新安装了一个低版本
 npm uninstall sass-loader
 npm install sass-loader@7.3.1 --save-dev
+
+# 安装状态管理
+npm install vuex --save
+
+# 安装异步请求
+npm install axios -s
 ````
 
 http://localhost:8080/#/login

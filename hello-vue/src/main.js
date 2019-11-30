@@ -6,8 +6,15 @@ import router from './router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+import Vuex from 'vuex'
 import App from './App'
 
+// 引用 Axios
+import axios from 'axios'
+Vue.prototype.axios = axios;
+
+// 安装状态管理模式
+Vue.use(Vuex);
 // 安装路由
 Vue.use(VueRouter);
 
