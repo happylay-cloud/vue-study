@@ -43,6 +43,7 @@ npm install vuex --save
 
 # 安装异步请求
 npm install axios -s
+
 ````
 
 http://localhost:8080/#/login

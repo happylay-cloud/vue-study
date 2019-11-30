@@ -56,6 +56,8 @@
         this.$refs[formName].validate((valid) => {
           if (valid) {
             // 设置用户登录成功
+            sessionStorage.setItem('isLogin', 'true');
+            // 设置用户登录成功
             this.$router.push("/main");
           } else {
             this.dialogVisible = true;

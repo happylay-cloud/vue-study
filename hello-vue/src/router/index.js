@@ -44,6 +44,10 @@ export default new Router({
       // 处理 404
       path: '*',
       component: NotFound
+    },
+    { 
+      // 登出
+      path: '/logout'
     }
   ]
 });
