@@ -10,7 +10,8 @@
 <div id="vue">
     <todo>
         <todo-title slot="todo-title" title="今日电视剧推荐"></todo-title>
-        <todo-items slot="todo-items" v-for="(item, index) in todoItems" v-bind:item="item" v-bind:index="index" :key="index" v-on:remove="removeTodoItems(index)"></todo-items>
+        <!--左边item绑定props里面item,右边item绑定v-for里面item-->>
+        <todo-items slot="todo-items" v-for="(item, index) in todoItems" v-bind:item="item" v-bind:index="index" :key="index" v-on:remove="removeTodoItems(index,item)"></todo-items>
     </todo>
 </div>
 
@@ -31,13 +32,17 @@
         template: '<div>{{title}}</div>'
     });
 
+    // 1、父组件可以使用 props 把数据传给子组件。
+    // 2、子组件可以使用 $emit 触发父组件的自定义事件。
+
     // 定义一个待办事项内容组件
     Vue.component('todo-items', {
         props: ['item', 'index'],
         template: '<li>{{index + 1}}. {{item}} <button @click="remove">删除</button></li>',
         methods: {
-            remove: function (index) {
-                this.$emit('remove', index);
+            remove: function (index,item) {
+                // 调用父组件方法
+                this.$emit('remove', index, item);
             }
         }
     });
@@ -49,7 +54,8 @@
         },
         methods: {
             // 该方法可以被模板中自定义事件触发
-            removeTodoItems: function (index) {
+            removeTodoItems: function (index,args) {
+                alert(args);
                 console.log("删除 " + this.todoItems[index] + " 成功");
                 this.todoItems.splice(index, 1);
             }
