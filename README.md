@@ -11,3 +11,16 @@ vue前端框架学习
 
 在控制台输入 vm.items.push({message: 'Baz'}) ,尝试追加一条数据,浏览器中显示的内容会增加一条 Baz
 ````
+
+#### vue3.0安装
+````
+npm install -g @vue/cli
+
+npm create hello-vue
+````
+#### vue2.0安装
+````
+cnpm install vue-cli -g
+
+vue init webpack hello-vue
+````
