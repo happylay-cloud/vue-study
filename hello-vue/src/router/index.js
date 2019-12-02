@@ -21,14 +21,19 @@ export default new Router({
       // 登录页
       name: 'Login',
       path: '/login',
-      component: Login
+      component: Login,
+      meta: {
+        title:"登录"
+      }
     },
     {
       // 首页
       name: 'Main',
-      path: '/main',
+      path: '/main/:username',
       component: Main,
-
+      meta: {
+        title:"首页"
+      },
       // 配置嵌套路由
       children: [
         {name:'UserProfile',path: '/user/profile/:id', component: UserProfile},
@@ -37,8 +42,9 @@ export default new Router({
     },   
     {
        // 配置重定向
-      path: '/goHome',
-      redirect: '/main'
+      path: '/goHome/:username',
+      redirect: '/main/:username',
+
     },  
     { 
       // 处理 404

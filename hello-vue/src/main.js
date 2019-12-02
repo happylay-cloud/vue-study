@@ -11,6 +11,7 @@ import App from './App'
 
 import axios from 'axios'
 
+Vue.config.productionTip = false;
 // 原型链
 Vue.prototype.axios = axios;
 
@@ -23,8 +24,13 @@ Vue.use(ElementUI);
 // 安装路由
 Vue.use(VueRouter);
 
-// 在跳转前执行
+// 在跳转前执行,根据路由设置标题
 router.beforeEach((to, form, next) => {
+    // 路由发生改变修改页面的title
+    if(to.meta.title) {
+      document.title = to.meta.title
+    }
+
   // 获取用户登录状态
   let isLogin = sessionStorage.getItem('isLogin');
 

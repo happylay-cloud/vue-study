@@ -32,7 +32,7 @@
                 <el-dropdown-item>个人信息</el-dropdown-item>
                 
                 <el-dropdown-item>
-                  <router-link to="/goHome">回到首页</router-link>
+                  <router-link to="/goHome/happylay">回到首页-{{$route.params.username}}</router-link>
                 </el-dropdown-item>
                 <el-dropdown-item>
                   <router-link to="/logout">退出登录</router-link>
