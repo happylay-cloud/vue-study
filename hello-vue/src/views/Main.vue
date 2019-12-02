@@ -10,10 +10,7 @@
                   <router-link :to="{name: 'UserProfile', params: {id: 1}}">个人信息</router-link>
                 </el-menu-item>
                 <el-menu-item index="1-2">
-                  <router-link to="/user/list">用户列表</router-link>
-                </el-menu-item>
-                <el-menu-item index="1-3">
-                   <router-link to="/goHome">回到首页</router-link>
+                  <router-link to="/user/list/2">用户列表</router-link>
                 </el-menu-item>
               </el-menu-item-group>
             </el-submenu>
@@ -33,12 +30,16 @@
               <i class="el-icon-setting" style="margin-right: 15px"></i>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item>个人信息</el-dropdown-item>
+                
+                <el-dropdown-item>
+                  <router-link to="/goHome">回到首页</router-link>
+                </el-dropdown-item>
                 <el-dropdown-item>
                   <router-link to="/logout">退出登录</router-link>
                 </el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
-            <span>HappyLay</span>
+            <span>{{this.$store.getters.getUser.username}}</span>
           </el-header>
 
           <el-main>

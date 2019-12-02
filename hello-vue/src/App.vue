@@ -9,6 +9,7 @@
     name: 'App',
     mounted() {
       window.addEventListener('unload', this.saveState);
+      console.log("页面刷新了")
     },
     methods: {
       saveState() {

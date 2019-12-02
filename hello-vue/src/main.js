@@ -3,25 +3,25 @@ import VueRouter from 'vue-router'
 import router from './router'
 import store from './store'
 
-
 // 导入 ElementUI
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
-import Vuex from 'vuex'
 import App from './App'
 
-// 引用 Axios
 import axios from 'axios'
+
+// 原型链
 Vue.prototype.axios = axios;
+
+import Vuex from 'vuex'
 
 // 安装状态管理模式
 Vue.use(Vuex);
-// 安装路由
-Vue.use(VueRouter);
-
 // 安装 ElementUI
 Vue.use(ElementUI);
+// 安装路由
+Vue.use(VueRouter);
 
 // 在跳转前执行
 router.beforeEach((to, form, next) => {
@@ -32,7 +32,6 @@ router.beforeEach((to, form, next) => {
   if (to.path == '/logout') {
     // 清空
     sessionStorage.clear();
-
     // 跳转到登录
     next({path: '/login'});
   }
@@ -57,9 +56,9 @@ router.beforeEach((to, form, next) => {
 
 new Vue({
   el: '#app',
+  store,
   // 启用路由
   router,
-  store,
   // 启用 ElementUI
   render: h => h(App)
 });

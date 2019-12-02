@@ -19,20 +19,20 @@ export default new Router({
   routes: [
     {
       // 登录页
-      path: '/login',
       name: 'Login',
+      path: '/login',
       component: Login
     },
     {
       // 首页
-      path: '/main',
       name: 'Main',
+      path: '/main',
       component: Main,
 
       // 配置嵌套路由
       children: [
-        {path: '/user/profile/:id', name:'UserProfile', component: UserProfile},
-        {path: '/user/list', component: UserList},
+        {name:'UserProfile',path: '/user/profile/:id', component: UserProfile},
+        {name:'UserList',path: '/user/list/:id', component: UserList, props: true},
       ]
     },   
     {
@@ -44,10 +44,6 @@ export default new Router({
       // 处理 404
       path: '*',
       component: NotFound
-    },
-    { 
-      // 登出
-      path: '/logout'
     }
   ]
 });

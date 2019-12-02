@@ -10,11 +10,13 @@ const user = {
         return state.user;
       }
     },
+    // 同步调用
     mutations: {
       updateUser(state, user) {
         state.user = user;
       }
     },
+    // 异步调用
     actions: {
       asyncUpdateUser(context, user) {
         context.commit('updateUser', user);
